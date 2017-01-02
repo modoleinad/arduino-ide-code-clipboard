@@ -1,0 +1,497 @@
+
+to do:
+
+Overall (ongoing tasks): 
+
+-assign all functions to created buttons so far
+
+-replace usage comments with hover over tool tips for how to use buttons in final version to clean up the text output in arduino ide, too many comments as is
+
+-creat a ahk serial monitor script to carry out actions on computer based on the on screen text actions of the monitor going on.
+
+-create github for uploading test ready versions
+
+
+
+
+
+settings: 
+
+-buttons for writing functions and/or classes?
+
+-button for setting up a millis type loop "delay" with time conversion options (sec, min, etc) see bookmarked example// replace def. of button Millis with this
+
+-buttons for long, short variables
+
+
+
+
+
+
+
+pins: 
+
+-pullup switch momemtary type button
+
+-pullup switch latching type button
+
+-button for "if analog read =="
+
+-button for software pwm on non pmw pins
+
+-button for pmw specific voltages, auto conversion
+
+-button for rgb led pin pwm
+
+-rename board/pins
+
+-button for pin specs (current per pin, in/out, pullup resistor value, which pins are pmw, which are tx and rx, any pin specific caveats, etc)
+
+-button for basic arduino specs info (Max current, memory, etc)
+
+-attach interupt buttons 
+
+-ascii pin layout pop up button
+
+-need soft serial button(s)?
+
+
+
+
+
+
+loop logic:
+
+-edit single if to be easier to use
+
+-if serial read == 'char'
+
+-if pin read == high or low
+
+-nested if statements? If and/or If?
+
+
+
+
+
+
+Serial: 
+
+-serial end and flash commands
+
+You can pass flash-memory based strings to Serial.print() by wrapping them with F(). 
+
+example:  Serial.print(F(“Hello World”));
+
+-add a Serial.findUntil() button
+
+
+
+
+
+Math:
+
+-add buttons
+
+-basic math constants and equations
+
+-conversion buttons for V,A and R needed
+
+-calculator for v,A,R,W figuring etc, basic stuff needed for electronics work
+
+-resistor band chart
+
+-led calculator for forward voltage drop, resistor needed etc
+
+-basic scaling calculator "have/want="
+
+-Pop up window with basic ascii conversion chart.
+
+-would be nice to have a drop down list of user variables that can be edited on the fly with comments showing what variable does what.... future release
+
+
+
+
+motors:
+
+-creat buttons for servo type control
+
+-create buttons for the l298d driver motor control (wheeled robot)
+
+
+
+
+string manipulation: 
+
+-find, replace, parse data
+
+-string comparisson operators
+
+-study and create buttons
+
+
+
+
+I2C:
+
+-study and create buttons
+
+-buttons for communicating with other arduinos
+
+-buttons for writing to sd
+
+-buttons for writing to bluetooth
+
+-buttons for writing to raspi
+
+-buttons for writing to atmega memory
+
+-buttons for writing to ip devices
+
+
+
+
+
+
+
+
+----------------------------------------
+
+
+
+/*header*/
+
+// PROGRAM NAME,VERSION,DATE
+// COMMENTS AND DIAGRAMS
+// PUT SETUP LIBRARIES AND VARIABLES BELOW
+
+//#include <exlibrary.h>
+//int EXVAR = 0;   
+
+--------------------------------
+
+/*setup*/
+
+void setup() {
+//pinmodes
+//serial.Begin(9600)
+}
+
+---------------------------------
+
+/*mainloop*/
+
+void loop() {
+
+}
+
+---------------------------------
+
+/*pinmodes*/
+
+pinMode(pinvar, INPUT);
+
+pinMode(pinvar, OUTPUT);
+
+pinMode(pinvar, INPUT_PULLUP);
+
+
+----------------------------------
+
+/*digital read and write*/
+
+digitalWrite(pinvar, HIGH);
+
+digitalWrite(pinvar, LOW);
+
+digitalRead(pinvar); // 1 or 0 value assigned
+
+----------------------------------------------
+
+
+/*analog read and write*/
+
+analogWrite(apinvar, value); // 0-255 pmw
+
+analvar = analogRead(apinvar); //  0-1023 value assigned, 5v/1024
+
+
+-------------------------------------------------------
+
+/*pause*/
+
+delay(ms); 
+
+millis;
+
+micro;
+
+-----------------------
+
+/*single if*/
+
+if (someVar > 50)
+{
+  // do something here
+}
+
+----------------------
+
+/*if...else*/
+
+if (someVar < 50)
+{
+  // action A
+}
+else
+{
+  // action B
+}
+
+-------------------------------
+
+/*for*/
+
+for (int i=0; i <= 255; i++){
+// some code here
+} 
+
+--------------------------------
+
+/*while*/
+
+var = 0;
+while(var < 200){
+// some code here; 
+var++; // update condition var
+}
+
+---------------------------------
+
+/*do...while*/
+
+do
+{
+var = 0;
+// some code here
+} while (var < 100);
+
+----------------------------------
+
+/*switch case*/
+
+switch (var) {
+case 1:
+//do something when var equals 1
+break;
+case 2:
+//do something when var equals 2
+break;
+}
+
+----------------------------------
+
+serial monitor
+
+if(Serial)
+
+available()
+
+begin()
+
+end()
+
+flush()
+
+parseInt()
+
+print()
+
+println()
+
+read()
+
+write()
+
+serialEvent()
+
+readString()
+
+find()
+
+timeout
+
+------
+
+serial cont.
+
+available for write
+
+finduntil
+
+parsefloat
+
+readbytes until
+
+readbytes
+
+readstringuntil
+
+serialevent
+
+
+
+
+
+----------------------------------
+
+logic operators
+
+== equal to
+
+!= not equal to
+
+< less than
+
+> greater than
+
+<= less than equal to
+
+>= greater than equal to
+
+&& and
+
+|| or
+
+! not
+
+++ increment
+
+-- decrement
+
+true
+
+False
+
+High
+
+Low
+
+
+
+
+----------------------------------
+
+data types and arrays
+
+void
+
+boolean
+
+char
+
+unsigned char
+
+byte
+
+int
+
+unsigned int
+
+word
+
+long
+
+unsigned long
+
+short
+
+double
+
+string- char array
+
+string- object
+
+array (show different formats and methods)
+
+----------------------------------
+
+Strings Class functions (different from "strings")
+
+The String class, part of the core as of version 0019, allows you to use and manipulate strings of text in more complex ways than character arrays do. You can concatenate Strings, append to them, search for and replace substrings, and more. It takes more memory than a simple character array, but it is also more useful.
+For reference, character arrays are referred to as strings with a small s, and instances of the String class are referred to as Strings with a capital S. Note that constant strings, specified in "double quotes" are treated as char arrays, not instances of the String class.
+Examples
+
+stream class
+
+read string until
+
+String()
+
+charAt()
+
+compareTo()
+
+equals()
+
+remove()
+
+replace()
+
+setCharAt()
+
+toCharArray()
+
+toInt()
+
+toFloat()
+
+trim()
+
+length()
+
+c_str()
+
+concat()
+
+equalsIgnoreCase()
+
+getBytes()
+
+reserve()
+
+
+
+
+
+
+----------------------------------
+
+libraries- eeprom, motors, I2c Wire, multiplexing
+
+---------------------------------
+
+extra- hexadecimal values, ascii values, binary values
+
+-----------------------------------
+
+math
+
+random
+
+random seed
+
+squrt
+
+sin,cos,tan
+
+compound operators
+
+min/max
+
+abs
+
+pow
+
+modulo
+
